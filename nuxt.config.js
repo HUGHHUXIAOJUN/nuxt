@@ -51,7 +51,7 @@ export default {
     scss: ['./assets/scss/variable.scss']
   },
   plugins: [
-    '@/plugins/axios','@/plugins/element-ui','@/plugins/message','@/plugins/icon'
+    '@/plugins/axios','@/plugins/element-ui','@/plugins/message','@/plugins/icon',{src:'@/plugins/common',mode:'client'}
   ],
   modules: [
     '@nuxtjs/axios',

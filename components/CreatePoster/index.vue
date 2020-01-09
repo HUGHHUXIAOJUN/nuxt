@@ -5,7 +5,7 @@
       <x-icon type="icon-close" @click.native="$emit('input', false)"></x-icon>
       <div v-if="JSON.stringify(content) !== '{}'" class="poster-wrap is-border">
         <!-- 最终海报图片 -->
-        <img v-if="isCompleted" :src="posterUrl">
+        <img v-if="isCompleted" :src="posterUrl"  crossorigin="anonymous">
 
         <!-- 用于生成海报 -->
         <div v-else ref="poster" class="create">
@@ -110,10 +110,35 @@ export default {
   },
   methods: {
     ...mapActions(['uploadImage']),
+     base64ToBlob(base64) {
+      let parts = base64.split(';base64,');
+      let contentType = parts[0].split(':')[1];
+      let raw = window.atob(parts[1]);
+      let rawLength = raw.length;
+
+      let uInt8Array = new Uint8Array(rawLength);
+
+      for (let i = 0; i < rawLength; ++i) {
+        uInt8Array[i] = raw.charCodeAt(i);
+      }
+      return new Blob([uInt8Array], {type: contentType});
+    },
+    getObjectURL(file) {
+      var url = null;
+      if (window.createObjectURL !== undefined) { // basic
+        url = window.createObjectURL(file);
+      } else if (window.URL !== undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL !== undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file);
+      }
+      return url;
+    },
     async _createPoster () {
       // 生成海报
       let canvas = await html2canvas(this.$refs.poster, {
         useCORS: true,
+        allowTaint:false,
         logging: false
       })
       let formData = new FormData()

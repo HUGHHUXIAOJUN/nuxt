@@ -1,14 +1,15 @@
 document.body.addEventListener('touchstart', () => {})
 document.body.addEventListener('click', (e) => {
+  if(e.target.href)return
   const moveDotWrap = document.createElement('div')
   const expression = [
-    'https://upyun.xuanmo.xin/images/smilies/huaixiao.gif',
-    'https://upyun.xuanmo.xin/images/smilies/yinxian.gif',
-    'https://upyun.xuanmo.xin/images/smilies/xieyanxiao.gif',
-    'https://upyun.xuanmo.xin/images/smilies/xiaoku.gif',
-    'https://upyun.xuanmo.xin/images/smilies/ciya.gif',
-    'https://upyun.xuanmo.xin/images/smilies/wozuimei.gif',
-    'https://upyun.xuanmo.xin/images/smilies/koubi.gif'
+    '/images/smilies/qq/huaixiao.gif',
+    '/images/smilies/qq/yinxian.gif',
+    '/images/smilies/qq/xieyanxiao.gif',
+    '/images/smilies/qq/xiaoku.gif',
+    '/images/smilies/qq/ciya.gif',
+    '/images/smilies/qq/wozuimei.gif',
+    '/images/smilies/qq/koubi.gif'
   ]
   moveDotWrap.className = 'move-dot-wrap on'
   moveDotWrap.style.top = e.clientY - 10 + 'px'
