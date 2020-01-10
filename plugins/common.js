@@ -2,14 +2,21 @@ document.body.addEventListener('touchstart', () => {})
 document.body.addEventListener('click', (e) => {
   if(e.target.href)return
   const moveDotWrap = document.createElement('div')
+  // const expression = [
+  //   '/images/smilies/qq/huaixiao.gif',
+  //   '/images/smilies/qq/yinxian.gif',
+  //   '/images/smilies/qq/xieyanxiao.gif',
+  //   '/images/smilies/qq/xiaoku.gif',
+  //   '/images/smilies/qq/ciya.gif',
+  //   '/images/smilies/qq/wozuimei.gif',
+  //   '/images/smilies/qq/koubi.gif'
+  // ]
   const expression = [
-    '/images/smilies/qq/huaixiao.gif',
-    '/images/smilies/qq/yinxian.gif',
-    '/images/smilies/qq/xieyanxiao.gif',
-    '/images/smilies/qq/xiaoku.gif',
-    '/images/smilies/qq/ciya.gif',
-    '/images/smilies/qq/wozuimei.gif',
-    '/images/smilies/qq/koubi.gif'
+    'http://q.huxiaojun.work/1.jpg',
+    'http://q.huxiaojun.work/2.jpg',
+    'http://q.huxiaojun.work/3.jpg',
+    'http://q.huxiaojun.work/4.jpg',
+    
   ]
   moveDotWrap.className = 'move-dot-wrap on'
   moveDotWrap.style.top = e.clientY - 10 + 'px'

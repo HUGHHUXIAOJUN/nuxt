@@ -25,7 +25,18 @@ $color-info: #1890ff;
 $color-success: #52c41a;
 $color-warning: #faad14;
 $color-error: #f5222d;
-
+//头部高度
+$headerHeight: 320px;
+//头部菜单高度
+$headerTabHeight: 60px;
+//头部菜单字体颜色
+$color-menu: rgba(255,255,255,1);
+//头部菜单
+$bg-menu: rgba(120,120,120,.6);
+//头部菜单窗口变小
+$bg-small: rgba(120,120,120,0);
+//头部菜单栏背景
+$color-Tab: rgba(40,42,44,.6);
 // 遮罩层
 $color-mask: rgba(0, 0, 0, .5);
 

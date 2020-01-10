@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- banner start -->
-    <div
+    <!-- <div
       ref="bannerWrapper"
       :class="[
         'banner-wrap',
@@ -40,7 +40,7 @@
           </el-carousel-item>
         </el-carousel>
       </template>
-    </div>
+    </div> -->
     <!-- banner end -->
     <div v-if="info.notice" class="sidebar-list notice tablet-show">
       <div class="header">
@@ -122,11 +122,11 @@ export default {
     }
   },
   mounted () {
-    this._bannerClacHeight()
-    window.addEventListener('resize', this._bannerClacHeight)
+    //this._bannerClacHeight()
+    //window.addEventListener('resize', this._bannerClacHeight)
   },
   beforeDestroy () {
-    window.removeEventListener('resize', this._bannerClacHeight)
+    //window.removeEventListener('resize', this._bannerClacHeight)
   },
   methods: {
     _bannerClacHeight () {

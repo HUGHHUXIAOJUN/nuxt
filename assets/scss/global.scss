@@ -5,7 +5,9 @@
   font-family: "play";
   src: url(../font/PlayRegular.woff.ttf);
 }
-
+//鼠标样式
+html{cursor:url(http://q.huxiaojun.work/web_cursor.cur),auto;}
+a,a:visited{cursor:url(http://q.huxiaojun.work/web_cursor_link.cur),auto;}
 // 文字选中颜色
 ::selection {
   background: $color-theme;
@@ -18,6 +20,14 @@
   height: 5px;
   background: #e4e4e4;
 }
+// @media screen and (max-width:1023px){
+//   ::-webkit-scrollbar {
+//     width: 0;
+//     height: 0;
+//     color: transparent;
+//     background: transparent;
+//   }
+// }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -284,7 +294,7 @@ body {
 
 // 文章列表
 .article-list-wrap {
-  margin-top: $container-margin;
+  //margin-top: $container-margin;
   padding: $container-padding;
   border-radius: $border-radius;
   background: $color-white;
@@ -295,6 +305,13 @@ body {
     font-size: $font-size-large;
   }
 }
+
+@media screen and (max-width: 1024px){
+  .article-list-wrap {
+    margin-top: $container-margin;
+  }
+}
+
 
 .article-list {
   position: relative;
@@ -421,8 +438,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 25px;
-  height: 25px;
+  width: 160px;
+  height: 160px;
   animation: move-dot .8s linear forwards;
 }
 
@@ -433,7 +450,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   //1200->1024
   .desktop-show {
     display: none;
@@ -457,7 +474,7 @@ body {
   }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1023px) {
   //max-width:768->1024px
   .phone-show {
     display: block;
