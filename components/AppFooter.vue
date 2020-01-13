@@ -158,7 +158,7 @@ export default {
 .back-top {
   position: fixed;
   z-index: 99;
-  right: 30px;
+  right: 10px;
   bottom: 40px;
   transition: .5s;
   transform: translateX(100px);

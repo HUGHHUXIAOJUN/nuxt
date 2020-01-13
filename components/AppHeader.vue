@@ -1,10 +1,24 @@
 <template>
   <header :class="['header-container', menuStatus && 'is-show-menu']">
-    <div class="hide-header">
-
+    <div :style="{'background-image': `url(${info.banner.big.path})`}" class="hide-header">
+      <div
+        id="hitokoto"
+        class="hitokoto-fullpage"
+      >
+        <div class="bracket text-left">『</div>
+        <div
+          class="word text-center"
+          id="hitokoto_text"
+        >{{infoP.hitokoto}}</div>
+        <div class="bracket text-right">』</div>
+        <div
+          class="author text-right m-t-40px"
+          id="hitokoto_author"
+        >-「{{infoP.creator}}」</div>
+      </div>
     </div>
     <div
-      class="header-content"
+      :class="['header-content', bg && 'active']"
       ref="header"
     >
       <div class="wrap h-f-100">
@@ -15,12 +29,13 @@
             :to="{ name: 'index' }"
             class="block"
           >
-            <img
+            <!-- <img
               :src="info.logo"
               class="vertical-middle"
               width="130"
               height="40"
-            >
+            > -->
+            <div class="limit2">{{infoP.hitokoto}}</div>
           </nuxt-link>
         </div>
         <!-- logo结束 -->
@@ -189,20 +204,25 @@ export default {
     return {
       searchText: "",
       isShowSearch: false,
-      mark: true
+      mark: true,
+      bg:false
     };
   },
   head() {
     return {
       link: [{ rel: "icon", type: "image/x-icon", href: this.info.favicon }],
-      style: [{ cssText: this.info.globalCss, type: "text/css" }]
+      style: [{ cssText: this.info.globalCss, type: "text/css" }] // 一言使用 //script:[{ src: 'https://v1.hitokoto.cn/?encode=js&select=%23hitokoto', defer: true }]
     };
   },
   computed: {
-    ...mapState(["info", "menu", "menuStatus"]),
+    ...mapState(["info", "menu", "menuStatus", "infoP"]),
+
     height() {
       return this.menuStatus ? `${window.innerHeight}px` : "100%";
-    }
+    },
+  },
+   mounted () {
+    window.addEventListener('scroll', this.limit)
   },
   watch: {
     menuStatus(v) {
@@ -212,8 +232,13 @@ export default {
     }
   },
   methods: {
+    //limit
+    limit(){
+      this.bg = window.scrollY > 300
+    },
     // 搜索
     _search() {
+      if (!this.searchText) return (this.isShowSearch = false);
       this.$router.push({
         name: "search",
         query: {
@@ -241,15 +266,27 @@ export default {
 .header-container {
   position: relative;
   width: 100%;
+  overflow: hidden;
   height: $headerHeight;
   background: $color-menu;
-
+  .logo {
+    display: none;
+  }
   .hide-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: $headerHeight;
+    font-size: 25px;
+    color: $color-theme;
     //width: 100vw;
-    background: url(http://q.huxiaojun.work/20200104020739.jpg) center center
-      no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    .word {
+      min-width: 300px;
+      padding: 0 40px;
+    }
   }
 
   .header-content {
@@ -261,6 +298,7 @@ export default {
     height: $headerTabHeight;
     background: $color-Tab;
     box-shadow: $box-shadow;
+    transition: .5s;
   }
 
   .wrap {
@@ -372,6 +410,11 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .header-container {
+    .header-content{
+      &.active{
+        background: $limit-Tab;
+      }  
+    }
     .sub-nav-wrapper {
       display: none;
       position: absolute;
@@ -420,8 +463,15 @@ export default {
   }
 }
 @media screen and (max-width: 1023px) {
-  //1024-->1200
   .header-container {
+    .logo {
+      display: block;
+    }
+    .hide-header {
+      div{
+          display: none;
+      }
+    } 
     .search-wrapper {
       display: none;
 
@@ -472,10 +522,6 @@ export default {
         }
       }
     }
-  }
-}
-@media screen and (max-width: 1023px) {
-  .header-container {
     .header-content {
       background: linear-gradient(limegreen, transparent),
         linear-gradient(90deg, skyblue, transparent),

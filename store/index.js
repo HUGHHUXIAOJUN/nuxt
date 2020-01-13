@@ -1,4 +1,4 @@
-import { UPDATE_GLOBAL_INFO, UPDATE_ERROR_MESSAGE, UPDATE_MENU_STATUS } from './mutations-types'
+import { UPDATE_GLOBAL_INFO, UPDATE_ERROR_MESSAGE, UPDATE_MENU_STATUS, GET_YIYAN } from './mutations-types'
 
 export const state = () => ({
   info: {},
@@ -9,15 +9,17 @@ export const state = () => ({
     code: '',
     message: ''
   },
-  menuStatus: false
+  menuStatus: false,
+  infoP: ''
 })
 
 export const mutations = {
-  [UPDATE_GLOBAL_INFO] (state, { info, menu, subMenu, links }) {
+  [UPDATE_GLOBAL_INFO] (state, { info, menu, subMenu, links, infoP }) {
     state.info = info
     state.menu = menu
     state.subMenu = subMenu
-    state.links = links
+    state.links = links 
+    state.infoP = infoP
   },
 
   [UPDATE_ERROR_MESSAGE] (state, data) {
@@ -26,7 +28,11 @@ export const mutations = {
 
   [UPDATE_MENU_STATUS] (state, flag) {
     state.menuStatus = flag
-  }
+  },
+
+  [GET_YIYAN] (state, data) {
+    state.infoP = data
+  },
 }
 
 export const actions = {
@@ -36,6 +42,7 @@ export const actions = {
       let { data: globalInfo } = await this.$axios.$get(`/wp-json/xm-blog/v1/info`)
       let { data: menu } = await this.$axios.$get(`/wp-json/xm-blog/v1/menu`)
       let { data: links } = await this.$axios.$get(`/wp-json/xm-blog/v1/get-links?type=home`)
+      let { data: infoP } = await this.$axios.$get(`https://v1.hitokoto.cn/`)
       // 判断banner类型
       if (globalInfo.banner.style === '1') {
         globalInfo.banner.big = globalInfo.banner.list[0]
@@ -46,7 +53,8 @@ export const actions = {
         info: globalInfo,
         menu: menu.mainMenu,
         subMenu: menu.subMenu,
-        links
+        links,
+        infoP
       }
       commit(UPDATE_GLOBAL_INFO, result)
       return Promise.resolve(result)

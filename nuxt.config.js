@@ -36,7 +36,12 @@ export default {
       // 百度主推文章收录用
       { src: 'https://zz.bdstatic.com/linksubmit/push.js' },
       // 加入百度统计js，使用时自行添加为自己的
-      { src: 'https://hm.baidu.com/hm.js?9ad747f5c0569abe42935fb32fece08f' }
+      { src: 'https://hm.baidu.com/hm.js?9ad747f5c0569abe42935fb32fece08f' },
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-TPC877MB0L' },
+      //waifu-tips.js 依赖 JQuery 库
+      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.js' },
+      //实现拖动效果，需引入 JQuery UI
+      { src: 'https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js' },
     ]
   },
   loading: './components/Loading',
