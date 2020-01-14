@@ -19,7 +19,9 @@
 .h-f-100 {
   height: 100%;
 }
-
+.m-h{
+  min-height: 100vh;
+}
 // 文本对齐
 .text-left {
   text-align: left;
@@ -53,7 +55,23 @@
 .hide {
   display: none;
 }
-
+.flex{
+  display: flex;
+}
+.flex_c{
+  display: flex;
+  flex-direction: column;
+}
+.flex_r{
+  display: flex;
+  flex-direction: row;
+}
+.flex1{
+  flex: 1;
+}
+.flex0{
+  flex-shrink: 0;
+}
 .o-hide {
   overflow: hidden;
 }

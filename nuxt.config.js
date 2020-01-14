@@ -20,7 +20,7 @@ export default {
     }
   },
   head: {
-    title: 'Test BLOG',
+    title: 'Hugh BLOG 前端博客',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

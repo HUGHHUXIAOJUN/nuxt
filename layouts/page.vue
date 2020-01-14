@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <div :class="['menu-mask', menuStatus && 'is-show-menu']" @click="_closeMenu"></div>
-    <app-header/>
-    <div :class="['main', menuStatus && 'is-show-menu']">
-      <div class="wrap">
-        <div class="content">
-          <nuxt/>
+    <div class="flex_c m-h">
+      <app-header class="flex0" />
+      <div :class="['flex1', 'main', menuStatus && 'is-show-menu']">
+        <div class="wrap">
+          <div class="content">
+            <nuxt/>
+          </div>
         </div>
       </div>
+      <app-footer class="flex0" />
     </div>
-    <app-footer/>
   </div>
 </template>
 

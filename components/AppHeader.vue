@@ -1,9 +1,10 @@
 <template>
   <header :class="['header-container', menuStatus && 'is-show-menu']">
-    <div :style="{'background-image': `url(${info.banner.big.path})`}" class="hide-header">
+    <div :style="{'background-image': `url(${info.banner.big.path})`}" class="hide-header" :class="[$route.path!=='/'&&'active']">
       <div
         id="hitokoto"
         class="hitokoto-fullpage"
+        :class="[$route.path!=='/'&&'hide']"
       >
         <div class="bracket text-left">『</div>
         <div
@@ -18,7 +19,7 @@
       </div>
     </div>
     <div
-      :class="['header-content', bg && 'active']"
+      :class="['header-content', $route.path==='/' && bg && 'active', $route.path!=='/' && unHome && 'active']"
       ref="header"
     >
       <div class="wrap h-f-100">
@@ -48,6 +49,7 @@
                 v-for="item in menu"
                 :key="item.key"
               >
+                <!-- 目录 -->
                 <nuxt-link
                   v-if="item.object === 'category'"
                   :to="{
@@ -63,6 +65,7 @@
                     type="icon-arrow-bottom"
                   ></x-icon>
                 </nuxt-link>
+                <!-- 页面 -->
                 <nuxt-link
                   v-else-if="item.object === 'page'"
                   :to="{ name: 'page-id', params: { id: item.object_id } }"
@@ -70,6 +73,7 @@
                 >
                   <x-icon :type="item.classes"></x-icon> {{ item.title }}
                 </nuxt-link>
+                <!-- 标签 -->
                 <nuxt-link
                   v-else-if="item.object === 'post_tag'"
                   :to="{ name: 'tags-id', params: { id: 1 }, query: { type: item.term_id, title: item.name } }"
@@ -77,13 +81,13 @@
                 >
                   <x-icon :type="item.classes"></x-icon> {{ item.title }}
                 </nuxt-link>
-                <a
+                <nuxt-link
                   v-else-if="item.object === 'custom'"
-                  :href="item.url"
+                  :to="{ path: item.url }"
                   class="first-link"
                 >
                   <x-icon :type="item.classes"></x-icon> {{ item.title }}
-                </a>
+                </nuxt-link>
                 <!-- 二级菜单 -->
                 <div
                   v-if="item.children.length !== 0"
@@ -205,7 +209,8 @@ export default {
       searchText: "",
       isShowSearch: false,
       mark: true,
-      bg:false
+      bg:false,
+      unHome:false
     };
   },
   head() {
@@ -235,6 +240,7 @@ export default {
     //limit
     limit(){
       this.bg = window.scrollY > 300
+      this.unHome=window.scrollY > 20
     },
     // 搜索
     _search() {
@@ -266,8 +272,6 @@ export default {
 .header-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  height: $headerHeight;
   background: $color-menu;
   .logo {
     display: none;
@@ -279,10 +283,12 @@ export default {
     height: $headerHeight;
     font-size: 25px;
     color: $color-theme;
-    //width: 100vw;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    &.active{
+      height: $headerTabHeight;
+    }
     .word {
       min-width: 300px;
       padding: 0 40px;

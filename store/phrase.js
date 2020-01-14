@@ -14,8 +14,8 @@ export const actions = {
   async getPhraseList ({ commit }) {
     try {
       const { data } = await this.$axios.$get(`/wp-json/xm-blog/v1/get-phrase`)
-      commit(SET_PHRASE_LIST, data.data.data)
-      return Promise.resolve(data.data.data)
+      commit(SET_PHRASE_LIST, data.data)
+      return Promise.resolve(data.data)
     } catch (error) {
       return Promise.reject(error)
     }
