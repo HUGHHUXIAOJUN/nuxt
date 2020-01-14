@@ -28,21 +28,37 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { hid: 'prism', rel: 'stylesheet', href: '/css/prism.css' }
+      { hid: 'prism', rel: 'stylesheet', href: '/css/prism.css' },
+      //font-awesome 4.2.0
+      { hid: 'font-awesome', rel: 'stylesheet', href: 'http://lib.baomitu.com/font-awesome/4.2.0/css/font-awesome.min.css', type: 'text/css' },
     ],
     script: [
       { src: '//at.alicdn.com/t/font_556506_8c5mvyqjye4.js' },
       { src: '/js/prism.js' },
       // 百度主推文章收录用
-      { src: 'https://zz.bdstatic.com/linksubmit/push.js' },
+      { src: 'https://zz.bdstatic.com/linksubmit/push.js', async: true },
       // 加入百度统计js，使用时自行添加为自己的
-      { src: 'https://hm.baidu.com/hm.js?9ad747f5c0569abe42935fb32fece08f' },
-      { src: 'https://www.googletagmanager.com/gtag/js?id=G-TPC877MB0L' },
+      { src: 'https://hm.baidu.com/hm.js?9ad747f5c0569abe42935fb32fece08f', async: true},
+      //谷歌
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-TPC877MB0L', async: true },
       //waifu-tips.js 依赖 JQuery 库
       { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.js' },
       //实现拖动效果，需引入 JQuery UI
       { src: 'https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js' },
-    ]
+      //key 
+      { innerHTML: 'XlchKey="hu990605112";', type: 'text/javascript', charset: 'utf-8' },
+      //JQuery-mousewheel  3.1.9 
+      { src: 'http://lib.baomitu.com/jquery-mousewheel/3.1.9/jquery.mousewheel.min.js' },
+      //  Scrollbar 
+      { src: 'http://static.badapple.top/BadApplePlayer/js/scrollbar.js' },
+      // BadApplePlayer
+      { src: 'http://static.badapple.top/BadApplePlayer/Player.js' },
+      
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+      oldbrowser: 'innerHTML'
+    },
+    __dangerouslyDisableSanitizers: ['script']
   },
   loading: './components/Loading',
   router: {
