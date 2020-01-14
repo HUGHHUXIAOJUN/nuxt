@@ -1,7 +1,7 @@
 {
   "name": "nuxt",
   "version": "1.0.0",
-  "description": "My Blog",
+  "description": "Hugh Blog | 前端博客",
   "author": "hughhu",
   "private": true,
   "scripts": {
