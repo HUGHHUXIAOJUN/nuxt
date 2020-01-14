@@ -171,8 +171,9 @@
       </div>
       <!-- GIT 查看       -->
       <a
-        href="https://github.com/lmk123/Runner"
+        href="https://github.com/HUGHHUXIAOJUN/nuxt"
         class="github-corner"
+        target="_blank"
       >
         <svg
           width="60"
