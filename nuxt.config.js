@@ -56,7 +56,7 @@ export default {
       //  Scrollbar 
       { src: 'http://static.badapple.top/BadApplePlayer/js/scrollbar.js' },
       // BadApplePlayer
-      { src: 'http://static.badapple.top/BadApplePlayer/Player.js' },
+      { src: 'http://static.badapple.top/BadApplePlayer/Player.js', async: true  },
       
     ],
     __dangerouslyDisableSanitizersByTagID: {
