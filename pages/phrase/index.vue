@@ -27,7 +27,7 @@ export default {
   computed: {
     ...mapState('phrase', ['list'])
   },
-  created () {
+  mounted(){
     this.getPhraseList()
   },
   methods: {

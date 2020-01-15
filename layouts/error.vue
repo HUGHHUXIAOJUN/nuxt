@@ -9,7 +9,7 @@ export default {
   name: 'NuxtError',
   props: ['error'],
   layout: 'page',
-  created () {
+  mounted(){
     this.$store.commit('UPDATE_ERROR_MESSAGE', { code: this.error.statusCode, message: this.error.message })
   },
   beforeDestroy () {

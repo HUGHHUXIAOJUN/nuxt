@@ -201,7 +201,7 @@ export default {
       ]
     }
   },
-  created () {
+  mounted () {
     this.fullPath = `${this.info.wp.replace(/\/$/, '')}${this.$route.path}`;
     //this.fullPath = location.href;
     let other = this.detail.articleInfor.other;
@@ -217,8 +217,6 @@ export default {
       alipay: this.info.alipay,
       wechatpay: this.info.wechatpay
     }
-  },
-  mounted () {
     // 海报内容
     this.posterContent = {
       imgUrl: this.detail.articleInfor.thumbnail,

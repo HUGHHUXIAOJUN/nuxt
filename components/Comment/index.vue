@@ -212,11 +212,8 @@ export default {
     }),
     ...mapState('comment', ['commentList', 'totalPage'])
   },
-  created () {
-    this.init()
-  },
- mounted () {
-
+  mounted () {
+   this.init()
   },
   beforeDestroy () {
 
