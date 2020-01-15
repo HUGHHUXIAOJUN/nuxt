@@ -54,9 +54,9 @@ export default {
       //JQuery-mousewheel  3.1.9 
       { src: 'https://lib.baomitu.com/jquery-mousewheel/3.1.9/jquery.mousewheel.min.js' },
       //  Scrollbar 
-      { src: 'https://static.badapple.top/BadApplePlayer/js/scrollbar.js' },
+      { src: 'https://static.https.badapple.top/BadApplePlayer/js/scrollbar.js' },
       // BadApplePlayer
-      { src: 'https://static.badapple.top/BadApplePlayer/Player.js', async: true  },
+      { src: 'https://static.https.badapple.top/BadApplePlayer/Player.js', async: true  },
       
     ],
     __dangerouslyDisableSanitizersByTagID: {
