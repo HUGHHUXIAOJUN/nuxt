@@ -42,7 +42,7 @@
       </template>
     </div> -->
     <!-- banner end -->
-    <div v-if="info.notice" class="sidebar-list notice tablet-show">
+    <div v-show="info.notice" class="sidebar-list notice tablet-show">
       <div class="header">
         <p>
           <x-icon type="icon-notice2"></x-icon> 公告
@@ -51,7 +51,7 @@
       <div class="content" v-html="info.notice"></div>
     </div>
     <!-- article list start -->
-    <div v-if='articleList' class="article-list-wrap">
+    <div v-show='articleList' class="article-list-wrap">
       <ul class="header">
         <li class="list">最新文章</li>
       </ul>
