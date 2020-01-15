@@ -51,7 +51,7 @@
       <div class="content" v-html="info.notice"></div>
     </div>
     <!-- article list start -->
-    <div class="article-list-wrap">
+    <div v-if='articleList' class="article-list-wrap">
       <ul class="header">
         <li class="list">最新文章</li>
       </ul>
