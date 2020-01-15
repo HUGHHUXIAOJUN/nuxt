@@ -28,10 +28,12 @@ export default {
       //禁止百度等搜索引擎自动转码
       { hid: 'Cache-Contro', content: 'no-transform', 'http-equiv': 'Cache-Control' },
       { hid: 'Cache-Contro2', content: 'no-siteapp', 'http-equiv': 'Cache-Control' },
+      { hid: 'Cache-Contro3', content: 'IE=edge,chrome=1', 'http-equiv': 'X-UA-Compatible' },
 
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { hid:'icon', rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { hid:'icon2', rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
       { hid: 'prism', rel: 'stylesheet', href: '/css/prism.css' },
       //font-awesome 4.2.0
       { hid: 'font-awesome', rel: 'stylesheet', href: 'https://lib.baomitu.com/font-awesome/4.2.0/css/font-awesome.min.css', type: 'text/css' },
