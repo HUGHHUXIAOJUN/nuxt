@@ -45,8 +45,9 @@ export default {
       { src: 'https://hm.baidu.com/hm.js?9ad747f5c0569abe42935fb32fece08f', async: true},
       //谷歌
       { src: 'https://www.googletagmanager.com/gtag/js?id=G-TPC877MB0L', async: true },
-      //waifu-tips.js 依赖 JQuery 库
-      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.js' },
+      //waifu-tips.js和播放器 依赖 JQuery 库
+      { src: 'https://lib.baomitu.com/jquery/2.2.4/jquery.min.js' },
+      //{ src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.js' },
       //实现拖动效果，需引入 JQuery UI
       { src: 'https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js' },
       //key 
@@ -56,12 +57,12 @@ export default {
       //  Scrollbar 
       { src: 'https://static.https.badapple.top/BadApplePlayer/js/scrollbar.js' },
       // BadApplePlayer
-      { src: 'https://static.https.badapple.top/BadApplePlayer/Player.js', async: true  },
+      { src: 'https://static.https.badapple.top/BadApplePlayer/Player.js' },
       
     ],
-    __dangerouslyDisableSanitizersByTagID: {
-      oldbrowser: 'innerHTML'
-    },
+    // __dangerouslyDisableSanitizersByTagID: {
+    //   oldbrowser: 'innerHTML'
+    // },
     __dangerouslyDisableSanitizers: ['script']
   },
   loading: './components/Loading',

@@ -13,7 +13,7 @@ a,a:visited{cursor:url(http://q.huxiaojun.work/web_cursor_link.cur),auto;}
   background: $color-theme;
   color: $color-white;
 }
-
+// 去除点击背景色
 // 滚动条颜色
 ::-webkit-scrollbar {
   width: 5px;
@@ -34,9 +34,18 @@ a,a:visited{cursor:url(http://q.huxiaojun.work/web_cursor_link.cur),auto;}
   background-color: $color-theme;
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 }
-
+input::-webkit-input-placeholder {
+  color: #9097A3;
+}
+input::-moz-input-placeholder {
+  color: #9097A3;
+}
+input::-ms-input-placeholder {
+  color: #9097A3;
+}
 html,
 body {
+  -webkit-tap-highlight-color: transparent;
   &.h-f-100 {
     height: 100%;
     overflow: hidden;

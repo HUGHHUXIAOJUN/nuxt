@@ -35,6 +35,8 @@ try {
   gtag('js', new Date());
   
   gtag('config', 'G-TPC877MB0L');`).appendTo('head');
+  //$("<script>").attr({src: "https://static.https.badapple.top/BadApplePlayer/js/scrollbar.js", type: "text/javascript"}).appendTo('body');
+  //$("<script>").attr({src: "https://static.https.badapple.top/BadApplePlayer/Player.js", type: "text/javascript"}).appendTo('body');
   $('body').append('<div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" class="live2d"></canvas><div class="waifu-tool"><span class="fui-home"></span> <span class="fui-chat"></span> <span class="fui-eye"></span> <span class="fui-user"></span> <span class="fui-photo"></span> <span class="fui-info-circle"></span> <span class="fui-cross"></span></div></div>');
 
   $.ajax({url: "/waifu-tips.js", dataType:"script", cache: true, success: function(res) {
@@ -43,8 +45,8 @@ try {
           /* 可直接修改部分参数 */
           live2d_settings['modelAPI'] = 'https://huxiaojun.work/wp-content/themes/service/api/';   // 自建 API 修改这里
           live2d_settings['hitokotoAPI'] = "hitokoto.cn";  // 一言 API
-          live2d_settings['modelId'] = 5;                  // 默认模型 ID
-          live2d_settings['modelTexturesId'] = 1;          // 默认材质 ID
+          live2d_settings['modelId'] = 1;                  // 默认模型 ID
+          live2d_settings['modelTexturesId'] = 29;          // 默认材质 ID
           live2d_settings['modelStorage'] = false;         // 不储存模型 ID
           
           /* 在 initModel 前添加 */
