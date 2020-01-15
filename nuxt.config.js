@@ -34,7 +34,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { hid: 'prism', rel: 'stylesheet', href: '/css/prism.css' },
       //font-awesome 4.2.0
-      { hid: 'font-awesome', rel: 'stylesheet', href: 'http://lib.baomitu.com/font-awesome/4.2.0/css/font-awesome.min.css', type: 'text/css' },
+      { hid: 'font-awesome', rel: 'stylesheet', href: 'https://lib.baomitu.com/font-awesome/4.2.0/css/font-awesome.min.css', type: 'text/css' },
     ],
     script: [
       { src: '//at.alicdn.com/t/font_556506_8c5mvyqjye4.js' },
