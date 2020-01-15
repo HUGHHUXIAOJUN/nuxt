@@ -52,11 +52,11 @@ export default {
       //key 
       { innerHTML: 'XlchKey="hu990605112";', type: 'text/javascript', charset: 'utf-8' },
       //JQuery-mousewheel  3.1.9 
-      { src: 'http://lib.baomitu.com/jquery-mousewheel/3.1.9/jquery.mousewheel.min.js' },
+      { src: 'https://lib.baomitu.com/jquery-mousewheel/3.1.9/jquery.mousewheel.min.js' },
       //  Scrollbar 
-      { src: 'http://static.badapple.top/BadApplePlayer/js/scrollbar.js' },
+      { src: 'https://static.badapple.top/BadApplePlayer/js/scrollbar.js' },
       // BadApplePlayer
-      { src: 'http://static.badapple.top/BadApplePlayer/Player.js', async: true  },
+      { src: 'https://static.badapple.top/BadApplePlayer/Player.js', async: true  },
       
     ],
     __dangerouslyDisableSanitizersByTagID: {

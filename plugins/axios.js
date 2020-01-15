@@ -4,7 +4,7 @@ export default function ({ $axios, redirect }) {
     'post'
   ])
   //$axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-  $axios.setBaseURL('http://huxiaojun.work');
+  $axios.setBaseURL('https://huxiaojun.work');
   //$axios.defaults.baseURL = 'http://huxiaojun.work:8082';
   $axios.onRequest(config => {
     if (config.method === 'get') {
