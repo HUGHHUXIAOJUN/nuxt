@@ -171,7 +171,7 @@
       </div>
       <!-- GIT 查看       -->
       <a
-        href="https://github.com/HUGHHUXIAOJUN/nuxt"
+        href="https://github.com/HUGHHUXIAOJUN/wp-nuxt"
         class="github-corner"
         target="_blank"
       >
