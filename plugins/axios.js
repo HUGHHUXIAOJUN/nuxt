@@ -3,9 +3,7 @@ export default function ({ $axios, redirect }) {
   $axios.setHeader('Content-Type', 'application/x-www-form-urlencoded', [
     'post'
   ])
-  //$axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
   $axios.setBaseURL('https://wp.huxiaojun.work');
-  //$axios.defaults.baseURL = 'https://wp.huxiaojun.work';
   $axios.onRequest(config => {
     if (config.method === 'get') {
       config.data && (config.progress = config.data.progress)
