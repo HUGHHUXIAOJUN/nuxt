@@ -24,16 +24,16 @@ a:visited {
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
-  background: #e4e4e4;
+  // background: #e4e4e4;
 }
-// @media screen and (max-width:1023px){
-//   ::-webkit-scrollbar {
-//     width: 0;
-//     height: 0;
-//     color: transparent;
-//     background: transparent;
-//   }
-// }
+@media screen and (max-width:400px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+    background: transparent;
+  }
+}
 //图片预览
 .pswp {
   z-index: 9999;
@@ -95,8 +95,9 @@ body {
   top: 60px;
   left: 0;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   background: $color-mask;
   opacity: 0;
 

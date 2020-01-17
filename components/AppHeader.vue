@@ -272,22 +272,24 @@ export default {
 <style lang="scss" scoped>
 .header-container {
   position: relative;
-  width: 100%;
+  box-sizing: border-box;
+  width: 100vw;
   background: $color-menu;
   .logo {
     display: none;
   }
   .hide-header {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: $headerHeight;
-    font-size: 25px;
     color: $color-theme;
-    background-position: center center;
+    font-size: 25px;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: 40%;
     background-size: cover;
-    &.active{
+    &.active {
       height: $headerTabHeight;
     }
     .word {
@@ -310,8 +312,8 @@ export default {
 
   .wrap {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
@@ -365,34 +367,36 @@ export default {
     }
 
     input[type="text"] {
-      -webkit-appearance: none;
       width: 160px;
       height: 30px;
       padding: 0 5px;
+
+      -webkit-appearance: none;
       caret-color: #2486ff !important;
     }
 
     .iconfont {
       width: 30px;
       height: 30px;
-      background: $color-main-background;
-      text-align: center;
       line-height: 30px;
-      cursor: pointer;
+      text-align: center;
+      background: $color-main-background;
       background: transparent;
+      cursor: pointer;
     }
   }
 
   //git 查看
   .github-corner {
     svg {
-      z-index: 999;
-      fill: $color-theme;
-      color: $color-menu;
       position: fixed;
       top: 0;
-      border: 0;
       right: 0;
+      z-index: 999;
+      color: $color-menu;
+      border: 0;
+
+      fill: $color-theme;
     }
     :not(svg) {
       transform-origin: 0 0;
@@ -417,17 +421,17 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .header-container {
-    .header-content{
-      &.active{
+    .header-content {
+      &.active {
         background: $limit-Tab;
-      }  
+      }
     }
     .sub-nav-wrapper {
-      display: none;
       position: absolute;
       top: 100%;
       left: 50%;
       z-index: $z-index;
+      display: none;
       width: 180px;
       transform: translateX(-50%);
     }
@@ -437,8 +441,8 @@ export default {
       top: 10px;
       color: $color-menu;
       background: $color-Tab;
-      border-radius: $border-radius;
       box-shadow: $box-shadow;
+      border-radius: $border-radius;
 
       &:before {
         content: "";
@@ -449,8 +453,9 @@ export default {
         height: 0;
         border: {
           width: 5px;
-          style: solid;
           color: transparent transparent $color-Tab transparent;
+
+          style: solid;
         }
       }
     }
@@ -461,8 +466,8 @@ export default {
         padding: 10px 15px;
         color: $color-menu;
         &:hover {
-          background-color: $color-theme;
           color: $color-menu;
+          background-color: $color-theme;
           transform: scaleX(1.05);
         }
       }
@@ -475,10 +480,10 @@ export default {
       display: block;
     }
     .hide-header {
-      div{
-          display: none;
+      div {
+        display: none;
       }
-    } 
+    }
     .search-wrapper {
       display: none;
 
@@ -493,11 +498,12 @@ export default {
         width: 100%;
         height: 100%;
         background: linear-gradient(limegreen, transparent),
-          linear-gradient(90deg, skyblue, transparent),
-          linear-gradient(-90deg, coral, transparent);
-        background-blend-mode: screen;
+        linear-gradient(90deg, skyblue, transparent),
+        linear-gradient(-90deg, coral, transparent);
+                animation: colorfulStripeChange 5s infinite alternate linear;
+
         -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
-        animation: colorfulStripeChange 5s infinite alternate linear;
+        background-blend-mode: screen;
 
         .search-content {
           position: relative;
@@ -524,34 +530,36 @@ export default {
           top: -60px;
           right: 0;
           display: block;
-          background: none;
           font-size: 24px;
+          background: none;
         }
       }
     }
     .header-content {
       background: linear-gradient(limegreen, transparent),
-        linear-gradient(90deg, skyblue, transparent),
-        linear-gradient(-90deg, coral, transparent);
-      background-blend-mode: screen;
+      linear-gradient(90deg, skyblue, transparent),
+      linear-gradient(-90deg, coral, transparent);
+              animation: colorfulStripeChange 5s infinite alternate linear;
+
       -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
-      animation: colorfulStripeChange 5s infinite alternate linear;
+      background-blend-mode: screen;
     }
     .nav-wrapper {
       position: fixed;
       top: 60px;
       right: 0;
       z-index: $z-index + 200;
-      width: 240px;
-      height: calc(100vh - 60px);
-      margin: 0;
-      padding: 0 20px;
       box-sizing: border-box;
       overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
+      width: 240px;
+      height: calc(100vh - 60px);
+      padding: 0 20px;
+      margin: 0;
       background: $color-theme;
-      transition: 0.5s;
       transform: translateX(100%);
+      transition: .5s;
+
+      -webkit-overflow-scrolling: touch;
 
       &.is-show {
         transform: translateX(0);
@@ -590,8 +598,8 @@ export default {
 
       .icon-search,
       .icon-menu {
-        font-size: 20px;
         color: $color-menu;
+        font-size: 20px;
       }
 
       .icon-menu {
@@ -602,14 +610,16 @@ export default {
 }
 @-webkit-keyframes colorfulStripeChange {
   100% {
+            filter: hue-rotate(360deg);
+
     -webkit-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
   }
 }
 @keyframes colorfulStripeChange {
   100% {
+            filter: hue-rotate(360deg);
+
     -webkit-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
   }
 }
 @keyframes octocat-wave {
