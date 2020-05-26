@@ -277,6 +277,10 @@ export default {
   background: $color-menu;
   .logo {
     display: none;
+    color:#FFF0F5;
+    .limit2{
+      color:#FFF0F5;
+    }
   }
   .hide-header {
     display: flex;
@@ -370,9 +374,9 @@ export default {
       width: 160px;
       height: 30px;
       padding: 0 5px;
-
+      color: $color-theme;
       -webkit-appearance: none;
-      caret-color: #2486ff !important;
+      caret-color: $color-theme !important;
     }
 
     .iconfont {
@@ -497,12 +501,13 @@ export default {
         align-items: center;
         width: 100%;
         height: 100%;
-        background: linear-gradient(limegreen, transparent),
-        linear-gradient(90deg, skyblue, transparent),
-        linear-gradient(-90deg, coral, transparent);
-                animation: colorfulStripeChange 5s infinite alternate linear;
+        background: #F5FFFA;
+        // background: linear-gradient(limegreen, transparent),
+        // linear-gradient(90deg, skyblue, transparent),
+        // linear-gradient(-90deg, coral, transparent);
+        //animation: colorfulStripeChange 5s infinite alternate linear;
 
-        -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
+        //-webkit-animation: colorfulStripeChange 5s infinite alternate linear;
         background-blend-mode: screen;
 
         .search-content {
@@ -536,12 +541,12 @@ export default {
       }
     }
     .header-content {
-      background: linear-gradient(limegreen, transparent),
-      linear-gradient(90deg, skyblue, transparent),
-      linear-gradient(-90deg, coral, transparent);
-              animation: colorfulStripeChange 5s infinite alternate linear;
+      // background: linear-gradient(limegreen, transparent),
+      // linear-gradient(90deg, skyblue, transparent),
+      // linear-gradient(-90deg, coral, transparent);
+      //         animation: colorfulStripeChange 5s infinite alternate linear;
 
-      -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
+      // -webkit-animation: colorfulStripeChange 5s infinite alternate linear;
       background-blend-mode: screen;
     }
     .nav-wrapper {
